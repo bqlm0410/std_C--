@@ -69,14 +69,14 @@ void addperson(addressbook* abs){
 	}
 }
 
-void showperson(addressbook* abs){
-	if(abs->size!=0){
-	for(int i=0;i<abs->size;i++){
-		cout<<"姓名："<<abs->personarray[i].name<<"\t"<<
-		"性别："<<(abs->personarray[i].sex==1?"男":"女")<<"\t"<<
-		"年龄："<<abs->personarray[i].age<<"\t"<<
-		"电话："<<abs->personarray[i].num<<"\t"<<
-		"住址："<<abs->personarray[i].add<<endl;
+void showperson(addressbook& abs){
+	if(abs.size!=0){
+	for(int i=0;i<abs.size;i++){
+		cout<<"姓名："<<abs.personarray[i].name<<"\t"<<
+		"性别："<<(abs.personarray[i].sex==1?"男":"女")<<"\t"<<
+		"年龄："<<abs.personarray[i].age<<"\t"<<
+		"电话："<<abs.personarray[i].num<<"\t"<<
+		"住址："<<abs.personarray[i].add<<endl;
 		system("pause");
 		system("cls");
 	}
@@ -215,7 +215,7 @@ int main() {
 			addperson(&abs);
 			break;
 		case 2:
-			showperson(&abs);
+			showperson(abs);
 			break;
 		case 3:
 		{	
